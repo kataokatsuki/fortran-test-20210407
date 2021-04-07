@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  fortran:
+    image: gcc
+    volumes:
+      - ./:/usr/src/myapp
+    working_dir: /usr/src/myapp
+    command: bash -c "gfortran main.f90 -o output && ./output"
